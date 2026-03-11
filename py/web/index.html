@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noodle Cargo Configurator</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <div class="bg-blur blur-a"></div>
+  <div class="bg-blur blur-b"></div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <h1>Noodle Cargo Configurator</h1>
+      <div class="status-wrap">
+        <span class="status-label">Aktiver Trailer</span>
+        <strong id="activeTrailer">Lowloader</strong>
+        <span class="dot">•</span>
+        <span id="activeCargo">Kein Cargo</span>
+      </div>
+    </header>
+
+    <section class="scene" aria-label="Trailer Szene">
+      <button class="nav-arrow left" id="toLowloader" type="button" title="Zu Lowloader">&#9664;</button>
+      <button class="nav-arrow right" id="toFlatbed" type="button" title="Zu Flachbett">&#9654;</button>
+
+      <div class="trailer trailer-main" id="lowloader">
+        <model-viewer
+          id="lowloaderModel"
+          src="./assets/models/lowloader.glb"
+          camera-controls
+          disable-zoom
+          ar="false"
+          environment-image="neutral"
+          shadow-intensity="0.45"
+          shadow-softness="0.9"
+          exposure="1.65"
+          interaction-prompt="none"
+        ></model-viewer>
+        <div class="cargo" id="cargoLow"></div>
+        <label>Lowloader</label>
+      </div>
+
+      <div class="trailer trailer-side" id="flatbed">
+        <div class="deck flat"></div>
+        <div class="cargo" id="cargoFlat"></div>
+        <label>Flachbett</label>
+      </div>
+    </section>
+
+    <section class="cargo-bar" aria-label="Cargo Leiste unten">
+      <div class="cargo-bar-head">
+        <h2>Cargo Typen</h2>
+        <span>Wie in einer Fahrzeug-Leiste: klicken zum Auswaehlen</span>
+      </div>
+      <div class="cargo-track" id="cargoTrack"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

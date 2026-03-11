@@ -1,0 +1,32 @@
+{
+  "cargos": [
+    {
+      "id": 1,
+      "name": "Äpfel",
+      "supports_lowloader": false,
+      "supports_flatbed": true,
+      "source": "ets2_cargo.db"
+    },
+    {
+      "id": 2,
+      "name": "Bagger",
+      "supports_lowloader": true,
+      "supports_flatbed": false,
+      "source": "ets2_cargo.db"
+    },
+    {
+      "id": 3,
+      "name": "Benzin",
+      "supports_lowloader": true,
+      "supports_flatbed": true,
+      "source": "ets2_cargo.db"
+    },
+    {
+      "id": 4,
+      "name": "Autos",
+      "supports_lowloader": true,
+      "supports_flatbed": true,
+      "source": "ets2_cargo.db"
+    }
+  ]
+}
